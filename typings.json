@@ -1,5 +1,0 @@
-{
-  "globalDependencies": {
-    "webpack-env": "registry:dt/webpack-env#1.12.2+20160316155526"
-  }
-}

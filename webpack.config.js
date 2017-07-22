@@ -10,8 +10,12 @@ module.exports = {
         ],
     },
     resolve: {
-        root: path.resolve(__dirname),
-        extensions: ['', '.ts', '.js'],
+		modules: [
+			__dirname,
+			path.resolve(__dirname, "src"),
+			"node_modules"
+		],
+        extensions: [ '.ts', '.js'],
     },
     output: {
         path: __dirname + '/dist/',
