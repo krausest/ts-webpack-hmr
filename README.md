@@ -31,4 +31,4 @@ See "Optional Module Loading and Other Advanced Loading Scenarios" from http://w
 * Babel compilation to ES 5 (while using HMR)
 If you prefer ES6 output just remove "presets": ["es2015"] from .babelrc and restart webpack
 * awesome-typescript-loader supports HMR whereas ts-loader does not
-* Use a typescript definition file for webpack via typings
+* Use a typescript definition file for webpack via npm
