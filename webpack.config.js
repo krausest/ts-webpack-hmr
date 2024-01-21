@@ -1,29 +1,30 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 var path = require('path');
 
 module.exports = {
     entry: "./src/main.ts",
     module: {
-        loaders: [
-            { test: /\.ts$/,
-                exclude:path.resolve(__dirname, "node_modules"),
-                loader: "babel-loader!awesome-typescript-loader" }
-        ],
+        rules: [
+          // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+          {
+            test: /\.ts$/,
+            exclude: path.resolve(__dirname, "node_modules"),
+            loader: "ts-loader",
+          },
+    ]
     },
-    resolve: {
-		modules: [
-			__dirname,
-			path.resolve(__dirname, "src"),
-			"node_modules"
-		],
-        extensions: [ '.ts', '.js'],
-    },
+    plugins: [
+        new HtmlWebpackPlugin({
+          template: "index.html",
+        }),
+    ],
     output: {
-        path: __dirname + '/dist/',
-        filename: '[name].js',
-        publicPath : 'dist'
+        path: path.resolve(__dirname, 'dist'),
+        filename: "[name].js",
     },
-    devServer:{
-        contentBase: __dirname
+    devServer:{     
+        hot: true,
+        liveReload: false,
     },
-    devtool: "source-map"
+    devtool: "inline-source-map",
 };
