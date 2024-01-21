@@ -9,7 +9,7 @@ to show how to use it.
 
 `npm install`
 
-`npm run build-dev-server`
+`npm run dev`
 
 Open http://localhost:8080/index.html, open the browser console to see what's happening, make an update to a.ts, save the file and start smiling. 
 There's no reloading necessary to update the contents of the red div. It shows the results of the updated iAmReloadable function from a.ts.
